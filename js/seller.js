@@ -15,7 +15,7 @@ function showSuggestions(input) {
                     suggestionBox.style.display = 'block'; // Show suggestions
                     data.forEach(place => {
                         const suggestionItem = document.createElement('div');
-                        suggestionItem.classList.add('suggestion-item');
+                        suggestionItem.classList.add('suggestion');
                         suggestionItem.innerText = place.display_name; // Show address in suggestion
                         suggestionItem.onclick = function () {
                             input.value = place.display_name; // Set input value to clicked suggestion

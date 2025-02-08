@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+PhagsPa&family=Noto+Sans+Thai:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Thai', sans-serif;
+    text-decoration: none;
+}
+
+nav {
+    width: 100%;
+    height: 4vw;
+    background-color: #0071B7;
+}
+
+.nav-container {
+    max-width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* เริ่มต้น โลโก้ */
+.nav-logo {
+    width: 15vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: -5vw;
+}
+
+.logo {
+    align-items: center;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 2vw;
+}
+
+/* สิ้นสุด โลโก้ */
+
+/* เริ่มต้น ทำเมนูและโปรไฟล์ */
+.menu-profile {
+    width: 50vw;
+    font-size: 1.5vw;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.cart {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.cartcount {
+    width: 1.25vw;
+    height: 1.25vw;
+    border-radius: 10px;
+    font-size: 9px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    background: red;
+}
+
+.record_profile {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.record_profile:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.login_login {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.interested_interested {
+    background: #FF7F50;
+    /* สีส้มสดใสเพื่อทำให้โดดเด่น */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    /* เพิ่มพื้นที่ให้ปุ่มใหญ่ขึ้น */
+    border-radius: 20px;
+    /* มุมโค้งเพื่อให้ปุ่มดูนุ่มนวล */
+    transition: 0.3s;
+    /* การเปลี่ยนแปลงที่นุ่มนวล */
+}
+
+.interested_interested:hover {
+    background: #FF4500;
+    /* สีเข้มขึ้นเมื่อ hover */
+    transform: scale(1.1);
+    /* ขยายขนาดปุ่มเล็กน้อย */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาให้ปุ่มเมื่อ hover */
+}
+
+.interested_interested i {
+    color: #fff;
+    /* สีไอคอนเป็นสีขาว */
+}
+
+.interested_interested p {
+    color: #fff;
+    /* ข้อความเป็นสีขาว */
+    margin-left: 10px;
+    /* เว้นระยะห่างจากไอคอน */
+    font-size: 1.2vw;
+    /* ขนาดข้อความ */
+}
+
+.interested_interested:hover p,
+.interested_interested:hover i {
+    color: #fff;
+    /* เมื่อ hover ข้อความและไอคอนจะยังคงเป็นสีขาว */
+}
+
+.profile_profile {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+/* สิ้นสุด ทำเมนูและโปรไฟล์ */
+
+/* เริ่มต้น แทบค้นหา */
+.nav-search {
+    background-color: #fff;
+    width: 25vw;
+    height: 70%;
+    border-radius: 20px;
+    margin-top: 4px;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.icon {
+    margin-left: 1vw;
+    margin-top: 0.5vw;
+    margin-right: 1vw;
+    color: gray;
+}
+
+.nav-input {
+    height: 100%;
+    display: flex;
+}
+
+.input-search {
+    height: 100%;
+    width: 100%;
+    font-size: 1.5vw;
+    outline: none;
+    border: 0;
+    padding-right: -10vw;
+}
+
+/* สิ้นสุด แทบค้นหา */
+
+.nav-store {
+    height: 13vw;
+    margin-top: 15px;
+}
+
+.store-ui {
+    background: #c9eaff;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    font-size: 13px;
+    margin-bottom: 70px;
+    margin-left: 10px;
+    color: #0071b7;
+}
+
+/* เริ่มต้น แถบค้นหาสินค้าด้านข้าง */
+.container {
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+}
+
+.sidebar-items {
+    color: #000;
+    background: #f2f2f2;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1vw;
+}
+
+.sidebar-items:hover {
+    background: #0071B7;
+    transition: 0.3s;
+    color: #FFF;
+    transform: scale(1.1);
+}
+
+/* สิ้นสุด แถบค้นหาสินค้าด้านข้าง */
+
+/* เริ่มต้น สินค้า */
+.product {
+    width: 75%;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2vw;
+}
+
+.product-items {
+    background: #f2f2f2;
+    min-height: 21vw;
+    max-height: 35vw;
+    width: 15vw;
+    cursor: pointer;
+}
+
+.product-items:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+.product-img {
+    width: 100%;
+    height: 14vw;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-sale_price {
+    width: 15vw;
+    height: 4vw;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 0.5vw;
+}
+
+.product-sale {
+    text-align: center;
+    font-size: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: center;
+}
+
+.product-price {
+    font-size: 0.5vw;
+    display: flex;
+    justify-content: center;
+    margin-top: center;
+}
+
+.product-name {
+    font-size: 1.2vw;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 0.5vw;
+    text-align: center;
+}
+
+.product-title {
+    min-height: 2vw;
+    max-height: 7vw;
+    font-size: 1.2vw;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.product-price {
+    font-size: 1vw;
+    width: 50%;
+    margin-left: 5px;
+    color: #0071B7;
+}
+
+.product-sale {
+    font-size: 1vw;
+    width: 50%;
+    margin-left: 3vw;
+}
+
+/* สิ้นสุด สินค้า */
+
+/* เริ่มต้น แสดงเมื่อกดสินค้า */
+.modal,
+.modal-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-page {
+    z-index: 99;
+    min-width: 30vw;
+    max-width: 60vw;
+    max-height: 30vw;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.modaldesc-content {
+    display: flex;
+}
+
+.modaldesc-detail {
+    margin-left: 10px;
+}
+
+.modaldesc-img {
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.modaldesc-title {
+    font-size: 1.2vw;
+    color: #adadaa;
+}
+
+.btn-cintrol {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 10vw;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.5vw;
+    transition: 0.3s;
+}
+
+.btn-buy {
+    width: 15vw;
+    background: #0071b7;
+    color: #FFF;
+    margin-left: 10px;
+}
+
+/* สิ้นสุด แสดงเมื่อกดสินค้า */
+
+/* เริ่ม เมื่อกดตะกร้า */
+.cartlist-items {
+    margin-bottom: 5px;
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+}
+
+.cartlist-left {
+    display: flex;
+}
+
+.cartlist-right {
+    display: flex;
+    align-items: center;
+}
+
+.cartlist-left img {
+    width: 7vw;
+    height: 7vw;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btnc {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0071B7;
+    cursor: pointer;
+}
+
+/* จบ เมื่อกดตะกร้า */
+
+.record,
+.record-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.record-page {
+    z-index: 99;
+    min-width: 30vw;
+    max-width: 60vw;
+    max-height: 30vw;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.recordlist-items {
+    margin-bottom: 5px;
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+}
+
+.record-left {
+    display: flex;
+}
+
+.record-left img {
+    width: 7vw;
+    height: 7vw;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.record-right {
+    display: flex;
+    align-items: center;
+}
