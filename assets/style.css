@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    /* ทำให้ไม่ต้องมีการเลื่อนหน้า */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-box {
+    background-color: #ffffff;
+    padding: 60px;
+    width: 450px;
+    /* ขยายฟอร์มให้ใหญ่ขึ้น */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาลึก */
+    position: relative;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #28a745; /* สีเขียว */
+}
+
+
+.textbox {
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 15px;
+    /* เพิ่มขนาด input */
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 18px;
+    /* ขยายขนาดตัวอักษรใน input */
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    /* ขยายขนาดปุ่ม */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างด้านล่างของปุ่ม */
+}
+
+.forgot-password {
+    font-size: 16px;
+    color: #007bff;
+    /* สีน้ำเงินสำหรับ "ลืมรหัสผ่าน?" */
+    text-decoration: none;
+    margin-top: 15px;
+    /* เพิ่มระยะห่างจากปุ่ม */
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.signup {
+    font-size: 16px;
+    color: #FF0000;
+    /* สีแดงสำหรับ "สมัครที่นี่" */
+    text-decoration: none;
+    margin-top: 15px;
+    /* เพิ่มระยะห่างจากปุ่ม */
+}
+
+.signup:hover {
+    text-decoration: underline;
+}
+
+.social-btn.fb {
+    background-color: #3b5998;
+}
+
+.social-btn.line {
+    background-color: #34b7f1;
+}
+
+.social-btn.google {
+    background-color: #db4437;
+}
+
+.social-btn.apple {
+    background-color: #000000;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+}
+
+.market-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างจากภาพ */
+}
+
+/* เพิ่มการปรับแต่งในมือถือ */
+@media (max-width: 768px) {
+    .login-box {
+        width: 320px;
+        /* ปรับขนาดในมือถือให้เล็กลง */
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 30px;
+        /* ขนาดฟอนต์เล็กลงในมือถือ */
+    }
+
+    .btn {
+        font-size: 18px;
+    }
+
+    .social-btn {
+        font-size: 16px;
+    }
+}

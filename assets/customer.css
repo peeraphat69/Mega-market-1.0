@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.register-box {
+    background-color: #ffffff;
+    padding: 60px;
+    width: 450px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+h1 {
+    font-size: 38px;
+    margin-top: 10px;
+    /* ลดระยะห่างระหว่างรูปภาพและข้อความ */
+    margin-bottom: 20px;
+    /* ลดระยะห่างระหว่างข้อความและช่องกรอกข้อมูล */
+    font-weight: bold;
+    color: #333;
+}
+
+.image-container {
+    margin-bottom: 10px;
+    /* ลดระยะห่างระหว่างรูปภาพและข้อความ */
+}
+
+.market-image {
+    width: 100%;
+    max-width: 150px;
+    /* กำหนดขนาดสูงสุดของรูปภาพให้เหมาะสม */
+    height: auto;
+    margin: 0 auto;
+    /* จัดให้รูปภาพอยู่กลาง */
+}
+
+.textbox {
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #28a745;
+    /* สีเขียว */
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .register-box {
+        width: 320px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .btn {
+        font-size: 18px;
+    }
+}

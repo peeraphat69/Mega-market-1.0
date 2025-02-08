@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Seller - Mega Market</title>
+    <link rel="stylesheet" href="../assets/seller.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h1>Mega Market</h1>
+            <form action="#">
+                <div class="textbox">
+                    <input type="text" placeholder="ชื่อร้านค้า" name="store-name" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" id="store-address" placeholder="ที่อยู่ร้านค้า" name="store-address" required>
+                    <div id="suggestions"></div> <!-- Suggestions div -->
+                </div>
+                <div class="textbox">
+                    <input type="text" placeholder="username" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <div class="textbox">
+                    <input type="tel" placeholder="Tel." name="tel" required>
+                </div>
+                <div class="textbox">
+                    <input type="email" placeholder="Email" name="email" required>
+                </div>
+                <!-- <div class="textbox">
+                    <select name="business-type" required>
+                        <option value="">เลือกประเภทธุรกิจ</option>
+                        <option value="e-commerce">E-commerce</option>
+                        <option value="retail">Retail</option>
+                    </select>
+                </div>
+                <div class="textbox">
+                    <textarea placeholder="คำบรรยายเพิ่มเติม" name="description"></textarea>
+                </div>
+                <div class="radio-group">
+                    <label>ต้องการรับการติดต่อจากเราไหม?</label>
+                    <label><input type="radio" name="contact" value="yes"> ใช่</label>
+                    <label><input type="radio" name="contact" value="no"> ไม่ใช่</label>
+                </div> -->
+                <input type="submit" value="บันทึกและสมัครสมาชิก" class="btn">
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/seller.js"></script>
+
+</body>
+
+</html>
