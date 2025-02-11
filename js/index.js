@@ -202,7 +202,7 @@ function rendercart(){
         $("#mycart").html(html)
     }
     else{
-        $("#mycart").html(`<p> ไม่มีสินค้าในตะกร้า </p><br><div id="mycart" class="cartlist">
+        $("#mycart").html(`<p style="font-size: 2vw;"> ไม่มีสินค้าในตะกร้า </p><br><div id="mycart" class="cartlist">
           
         `)
     }

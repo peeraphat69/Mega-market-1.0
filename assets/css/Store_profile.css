@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+PhagsPa&family=Noto+Sans+Thai:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -152,22 +151,22 @@ nav{
 }
 /* สิ้นสุด แทบค้นหา */
 
- /* เริ่ม ปุ่มกด */
-.button_all{
-    /* background: palevioletred; */
+/* เริ่ม แถบโปรไฟล์ */
+.profile_contains{
+    /* background: red; */
     width: 100%;
+    height: 15vw;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
 }
-.close_button{
+.button_back{
     height: 3.5vw;
     width: 10.5vw;
     font-size: 1.5vw;
-    /* padding: 4px; */
     border-radius: 5px;
     margin-left: 1vw;
+    margin-top: -10vw;
+    margin-right: 5vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,83 +174,147 @@ nav{
     background: #0071B7; 
     color: #fff;
 }
-.exit_button{
-    height: 3.5vw;
-    width: 9.5vw;
-    font-size: 1.5vw;
-    /* padding: 4px; */
-    border-radius: 5px;
-    margin-right: 1vw;
+.profile_img{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50px;
+    margin-right: 10vw;
     display: flex;
-    align-items: center;
     justify-content: center;
-    cursor: pointer;
-    background: #DF6565;
-    color: #fff;
-}
-.button_click:hover{
-    transition: 0.3s;
-    transform: scale(1.1);
-}
- /* จบ ปุ่มกด */
-
-/* เริ่ม แถบโปรไฟล์ */
-.nav_Main_profile{
-    background: #70BEEE;
-    width: 100%;
-    height: 20vw;
     align-items: center;
-    justify-content: center;
+    object-fit: cover;
+    background: red;
+}
+.detail_profile{
+    width: 60vw;
+    height: 13vw;
+    border-radius: 5px;
+    font-size: 1.5vw;
     display: flex;
     flex-direction: column;
-}
-.icon_profile{
-    background: #fff;
-    width: 13vw;
-    height: 13vw;
-    align-items: center;
     justify-content: center;
-    margin: 10px auto;
+    color: #fff;
+    background: #0071B7;
+}
+.detail_name{
+    /* background: yellow; */
+    width: 58vw;
+    height: 5vw;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
     display: flex;
-    border-radius: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.detail_name_detail{
+    background: #70BEEE;
+    width: 45vw;
+    height: 100%;
+    margin-right: 2vw;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    
+}
+.detail_title{
+    /* background: red; */
+    width: 58vw;
+    height: 5vw;
+    margin-left: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.detail_title_detail{
+    background: #70BEEE;
+    width: 45vw;
+    height: 100%;
+    margin-right: 2vw;
+    border-radius: 5px;
 }
 /* จบ แถบโปรไฟล์ */
 
- /* เริ่ม ประวัติผู้ใช้ */
-.profile_details{
-    /* background: palegoldenrod; */
+/* เริ่มต้น สินค้า */
+.product {
+    /* background: red; */
+    width: 75%;
+    padding: 5px;
+    grid-gap: 2vw;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.product-items {
+    min-height: 21vw;
+    max-height: 35vw;
+    width: 15vw;
+    cursor: pointer;
+    background: #f2f2f2;
+}
+
+.product-items:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+.product-img {
     width: 100%;
-    height: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-.main_ui{
-    margin-top: 1vw;
-    width:40vw;
-    height: 5vw;
+    height: 14vw;
+    object-fit: cover;
     border-radius: 5px;
-    margin-right: 5px;
-    display: flex;
-    align-items: center;;
-    justify-content: flex-end;
-    background: #0D99FF;
 }
-.profile_title{
-    /* background: yellow; */
+
+.product-sale_price {
+    width: 15vw;
+    height: 4vw;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 0.5vw;
+}
+
+.product-sale {
+    text-align: center;
+    font-size: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: center;
+}
+
+.product-price {
+    font-size: 0.5vw;
+    display: flex;
+    justify-content: center;
+    margin-top: center;
+}
+
+.product-name {
+    font-size: 1.2vw;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 0.5vw;
+    text-align: center;
+}
+
+.product-title {
+    min-height: 2vw;
+    max-height: 7vw;
+    font-size: 1.2vw;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.product-price {
+    font-size: 1vw;
+    width: 50%;
     margin-left: 5px;
-    font-size: 1.5vw;
-    margin-right: 10px;
-    color: #fff;
+    color: #0071B7;
 }
-.profilename{
-    width: 30vw;
-    height: 80%;
-    border-radius: 5px;
-    border: 1;
-    display: flex;
-    align-items: center;
-    background: #70BEEE;
-    color: #fff;
+
+.product-sale {
+    font-size: 1vw;
+    width: 50%;
+    margin-left: 3vw;
 }
- /* จบ ประวัติผู้ใช้ */
+/* สิ้นสุด สินค้า */

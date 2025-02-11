@@ -58,6 +58,8 @@ nav {
 .cart:hover {
     transition: 0.3s;
     transform: scale(1.1);
+    border-radius: 5px;
+    background: #005386;
 }
 
 .cartcount {
@@ -83,6 +85,8 @@ nav {
 .record_profile:hover {
     transition: 0.3s;
     transform: scale(1.1);
+    border-radius: 5px;
+    background: #005386;
 }
 
 .login_login {
@@ -94,23 +98,22 @@ nav {
 }
 
 .login:hover {
+    border-radius: 5px;
     transition: 0.3s;
     transform: scale(1.1);
+    background: #005386;
 }
 
 .interested_interested {
-    background: #FF7F50;
-    /* สีส้มสดใสเพื่อทำให้โดดเด่น */
+    border-radius: 20px;
+    transition: 0.3s;
+    height: 3.5vw ;
+    width: 8vw;
     margin: auto;
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: 10px 20px;
-    /* เพิ่มพื้นที่ให้ปุ่มใหญ่ขึ้น */
-    border-radius: 20px;
-    /* มุมโค้งเพื่อให้ปุ่มดูนุ่มนวล */
-    transition: 0.3s;
-    /* การเปลี่ยนแปลงที่นุ่มนวล */
+    background: #FF7F50;
 }
 
 .interested_interested:hover {
@@ -152,25 +155,30 @@ nav {
 .profile:hover {
     transition: 0.3s;
     transform: scale(1.1);
+    border-radius: 5px;
+    background: #005386;
 }
 
 /* สิ้นสุด ทำเมนูและโปรไฟล์ */
 
 /* เริ่มต้น แทบค้นหา */
 .nav-search {
-    background-color: #fff;
     width: 25vw;
-    height: 70%;
+    height: 3vw;
     border-radius: 20px;
-    margin-top: 4px;
+    margin-top: 0.4vw;
     align-items: center;
     display: flex;
     overflow: hidden;
+    background-color: #fff;
 }
 
 .icon {
+    /* background: red; */
+    height: 2.4vw;
+    width: 2.4vw;
+    font-size: 2vw;
     margin-left: 1vw;
-    margin-top: 0.5vw;
     margin-right: 1vw;
     color: gray;
 }
@@ -329,7 +337,6 @@ nav {
     width: 50%;
     margin-left: 3vw;
 }
-
 /* สิ้นสุด สินค้า */
 
 /* เริ่มต้น แสดงเมื่อกดสินค้า */
