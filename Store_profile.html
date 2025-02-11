@@ -112,35 +112,39 @@
     </nav>
     <!-- เริ่ม แถบโปรไฟล์ -->
     <!-- เริ่มต้น รายละเอียดสินค้า -->
-    <div id="modal_desc" class="modal" style="display: none;">
+    <div id="modal_desc" class="modal" style="display: none;" >
         <div onclick="closeModal()" class="modal-bg"></div>
         <div class="modal-page">
-            <h5>รายละเอียดสินค้า</h5>
-            <br>
-            <div class="modaldesc-content">
-                <img id="mdd-img" class="modaldesc-img" src="img/moon.jpg" alt="">
-                <div class="modaldesc-detail">
-                    <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
-                    <p id="mdd-price" style="font-size: 1.2vw;">$ 500</p>
-                    <br>
-                    <p id="mdd-desc" class="modaldesc-title"> nulla esse, sequi earum doloribus perferendis mollitia.
-                        Quo autem
-                        nam blanditiis unde est inventore velit porro, enim sed molestias, ut ab eum eos et libero,
-                        perspiciatis
-                        molestiae sint aperiam.</p>
-                    <br>
-                    <div class="btn-cintrol">
-                        <button onclick="closeModal()" class="btn">
-                            ปิด
-                        </button>
-                        <button onclick="addtocart()" class="btn btn-buy">
-                            เพิ่มในตะกร้า
-                        </button>
-                    </div>
-                </div>
+          <h5 style="font-size: 2vw;">รายละเอียดสินค้า</h5>
+          <br>
+          <div class="modaldesc-content">
+            <img id="mdd-img" class="modaldesc-img" src="img/moon.jpg" alt="">
+            <div class="modaldesc-detail">
+              <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
+              <p id="mdd-price" style="font-size: 1.2vw;">$ 500</p>
+              <br>
+              <p id="mdd-desc" class="modaldesc-title"> nulla esse, sequi earum doloribus perferendis mollitia. Quo autem
+                nam blanditiis unde est inventore velit porro, enim sed molestias, ut ab eum eos et libero, perspiciatis
+                molestiae sint aperiam.</p>
+              <br>
+              <div class="btn-cintrol">
+                <button onclick="closeModal()" class="btn">
+                  <p>ปิด</p>
+                </button>
+                <button onclick="addtocart()" class="btn btn-buy">
+                  <p>เพิ่มในตะกร้า</p>
+                </button>
+                <button class="btn_store"><a href="/Store_profile.html" >
+                  <p style="color: #fff;">
+                    ไปที่หน้าร้านค้า
+                  </p>
+                </a>
+                </button>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
     <!-- สิ้นสุด รายละเอียดสินค้า -->
 
     <!-- เริ่มต้น ตะกร้าสินค้า -->
@@ -155,9 +159,9 @@
                 <button onclick="closeModal()" class="btn">
                     ปิด
                 </button>
-                <button onclick="closeModal()" class="btn btn-buy">
+                <button onclick="buyProduct()" class="btn btn-buy">
                     ซื้อ
-                </button>
+                </button>                
             </div>
         </div>
     </div>

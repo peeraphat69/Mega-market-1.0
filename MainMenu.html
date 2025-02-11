@@ -101,7 +101,7 @@
   <div id="modal_desc" class="modal" style="display: none;">
     <div onclick="closeModal()" class="modal-bg"></div>
     <div class="modal-page">
-      <h5>รายละเอียดสินค้า</h5>
+      <h5 style="font-size: 2vw;">รายละเอียดสินค้า</h5>
       <br>
       <div class="modaldesc-content">
         <img id="mdd-img" class="modaldesc-img" src="img/moon.jpg" alt="">
@@ -115,10 +115,16 @@
           <br>
           <div class="btn-cintrol">
             <button onclick="closeModal()" class="btn">
-              ปิด
+              <p>ปิด</p>
             </button>
             <button onclick="addtocart()" class="btn btn-buy">
-              เพิ่มในตะกร้า
+              <p>เพิ่มในตะกร้า</p>
+            </button>
+            <button class="btn_store"><a href="/Store_profile.html" >
+              <p style="color: #fff;">
+                ไปที่หน้าร้านค้า
+              </p>
+            </a>
             </button>
           </div>
         </div>
@@ -139,9 +145,9 @@
         <button onclick="closeModal()" class="btn">
           ปิด
         </button>
-        <button onclick="closeModal()" class="btn btn-buy">
+        <button onclick="buyProduct()" class="btn btn-buy">
           ซื้อ
-        </button>
+      </button>      
       </div>
     </div>
   </div>

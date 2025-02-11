@@ -5,7 +5,7 @@ var product = [{
     price: 500,
     description: 'ดวงดาวขนาดจิ๋ว มีเส้นผ่าศูนญ์กลาง 50 cm.',
     type: 'toy',
-    sale: '5.4k'
+    sale: '0'
 },{
     id:2,
     img:'img/shoot.avif',
@@ -13,7 +13,7 @@ var product = [{
     price: 7500,
     description:'ร้องเท้าลายใหม่ออกตัววันนี้แล้ว',
     type:'shoe',
-    sale: '1.54k'
+    sale: '0'
 },{
     id:3,
     img:'img/labtop.jpg',
@@ -21,7 +21,7 @@ var product = [{
     price: 145000,
     description:'โน๊ตบุ๊คส่วนตัวสำหรับใช้ทำงานทั่วไป และแล่นเกม',
     type:'electronic',
-    sale: '12'
+    sale: '0'
 }];
 
 // เริ่มต้น แสดงสินค้า
@@ -112,19 +112,18 @@ function closeModal(){
 var cart = [];
 var record = []; 
 
-function addtocart(){
+function addtocart() {
     var pass = true;
 
-    // นับจำนวนสินค้าที่ซ้ำในตะกร้า
-    for (let i = 0; i < cart.length; i++){
-        if(productindex == cart[i].index){
+    for (let i = 0; i < cart.length; i++) {
+        if (productindex == cart[i].index) {
             cart[i].count++;
+            product[productindex].sale = (parseInt(product[productindex].sale) + 1).toString(); // 🔥 เพิ่มจำนวนที่กดซื้อ
             pass = false;
         }
     }
 
-    // ถ้าเป็นสินค้าใหม่ ให้เพิ่มเข้าไปในตะกร้า
-    if(pass){
+    if (pass) {
         var obj = {
             index: productindex,
             id: product[productindex].id,
@@ -134,40 +133,21 @@ function addtocart(){
             count: 1
         };
         cart.push(obj);
+        product[productindex].sale = (parseInt(product[productindex].sale) + 1).toString(); // 🔥 เพิ่มจำนวนที่กดซื้อ
     }
 
-    // เพิ่มสินค้าไปยังประวัติการสั่งซื้อ
-    var recordExists = true;
-    for (let i = 0; i < record.length; i++) {
-        if (productindex == record[i].index) {
-            record[i].count++;
-            recordExists = false;
-
-        }
-    }
-    if(recordExists){
-        var obj = {
-            index: productindex,
-            id: product[productindex].id,
-            name: product[productindex].name,
-            price: product[productindex].price,
-            img: product[productindex].img,
-            count: 1
-        };
-        record.push(obj);
-    }
-
-    // แจ้งเตือนเมื่อเพิ่มของในตะกร้า
     Swal.fire({
         icon: 'success',
         title: 'เพิ่ม ' + product[productindex].name + ' ไปที่ตะกร้าและบันทึกประวัติการสั่งซื้อ!'
     });
 
-    // อัปเดต UI ของตะกร้าและประวัติการสั่งซื้อ
-    $("#cartcount").css('display','flex').text(cart.length);
-    rendercart();    // อัปเดตตะกร้าสินค้า
-    renderrecord();  // อัปเดตประวัติการสั่งซื้อ
+    updateCartCount();  
+    rendercart();   
+    renderrecord();  
+    updateProductSale();  // 🔥 อัปเดต UI ของสินค้าหลังจากกดซื้อ
 }
+
+
 // จบ เพิ่มของในตะกร้า
 
 
@@ -220,35 +200,31 @@ function deinitems(action, index) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'คุณต้องการลบสินค้า?',
-                    showConformButton: true,
+                    showConfirmButton: true,
                     showCancelButton: true,
                     confirmButtonText: 'ลบ',
-                    cancelButtonText: 'Cancel'         
-                 }).then((res) =>{
+                    cancelButtonText: 'ยกเลิก'         
+                }).then((res) =>{
                     if(res.isConfirmed){
-                        cart.splice(index, 1)
-                        console.log(cart)
+                        cart.splice(index, 1);
                         rendercart();
-                        $("#cartcont").css('display', 'flex').text(cart.length)
-                        if(cart.length <= 0){
-                            $("#cartcont").css('display', 'none')
-                            $("#cartcount").css('display','none').text(cart.length)
-                        }
-                    }
-                    else{
+                        renderrecord();  // 🔥 อัปเดตข้อมูลในประวัติการสั่งซื้อ
+                        updateCartCount();
+                    } else {
                         cart[index].count++;
-                        $("#countitems"+index).text(cart[index].count)
+                        $("#countitems"+index).text(cart[index].count);
                     }
-                 })
+                })
             }
         }
-    }
-    else if(action == '+'){
+    } else if(action == '+'){
         cart[index].count++;
-        $("#countitems"+index).text(cart[index].count)
-
+        $("#countitems"+index).text(cart[index].count);
     }
+    renderrecord();  // 🔥 อัปเดตข้อมูลในประวัติการสั่งซื้อ
+    updateCartCount();
 }
+
 
 
 
@@ -264,20 +240,20 @@ function closereocrd(){
 
 // เปิด แสดงประวัติเมื่อกดเพิ่มสินค้า
 function renderrecord(){
-    if(cart.length > 0){
+    if(record.length > 0){
         var html = '';
-        for(var i=0; i<cart.length; i++){
+        for(var i=0; i<record.length; i++){
             html += `<div class="recordlist-items">
           <div class="record-left">
-            <img src="${cart[i].img}" alt="">
+            <img src="${record[i].img}" alt="">
             <div class="recordlist-detail">
-              <p style="font-size: 1.5vw;"> ${cart[i].name}</p>
-              <p style="font-size: 1.2vw;"> ${numberWithCommas(cart[i].price * cart[i].count)} บาท</p>
+              <p style="font-size: 1.5vw;"> ${record[i].name}</p>
+              <p style="font-size: 1.2vw;"> ${numberWithCommas(record[i].price * record[i].count)} บาท</p>
             </div>
           </div>
           <div class="record-right">
             <p class="right_text">จำนวน </p>
-            <p style="margin: 0 10px">${cart[i].count}</p>
+            <p style="margin: 0 10px">${record[i].count}</p>
             <p class="right_text"> ชิ้น</p>
           </div>
         </div>
@@ -286,9 +262,54 @@ function renderrecord(){
         $("#myrecord").html(html)
     }
     else{
-        $("#myrecord").html(`<p> ไม่มีประวัติการสั่งซื้อ </p><br><div id="myrecord" class="recordtlist">
-          
-        `)
+        $("#myrecord").html(`<p> ไม่มีประวัติการสั่งซื้อ </p>`);
     }
 }
-// เปิด แสดงประวัติเมื่อกดเพิ่มสินค้า
+
+// ปิด แสดงประวัติเมื่อกดเพิ่มสินค้าฃ
+
+function updateCartCount() {
+    let totalCount = cart.reduce((sum, item) => sum + item.count, 0);
+    if (totalCount > 0) {
+        $("#cartcount").css('display', 'flex').text(totalCount);
+    } else {
+        $("#cartcount").css('display', 'none');
+    }
+}
+
+
+function updateProductSale() {
+    for (let i = 0; i < product.length; i++) {
+        $(".product-items").eq(i).find(".product-sale").text("ขายแล้ว " + product[i].sale + " ชิ้น");
+    }
+}
+
+
+// อัปเดตจำนวนขาย (product.sale)
+// รีเฟรช UI ให้แสดงจำนวนที่ขายจริง
+function buyProduct() {
+    for (let i = 0; i < cart.length; i++) {
+        let productID = cart[i].id;
+        let productIndex = product.findIndex(p => p.id === productID);
+        
+        if (productIndex !== -1) {
+            product[productIndex].sale = (parseInt(product[productIndex].sale) + cart[i].count).toString();
+        }
+
+        // 🔥 เพิ่มสินค้าลงใน record โดยไม่รวมกับรายการเดิม
+        record.push({ ...cart[i] });
+    }
+
+    updateProductSale();
+    cart = []; // เคลียร์ตะกร้า
+    updateCartCount();
+    rendercart();
+    renderrecord(); // 🔥 อัปเดตประวัติการสั่งซื้อ
+
+    Swal.fire({
+        icon: 'success',
+        title: 'ทำการซื้อสินค้าเรียบร้อยแล้ว!'
+    });
+
+    closeModal();
+}
