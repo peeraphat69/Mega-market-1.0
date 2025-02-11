@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+PhagsPa&family=Noto+Sans+Thai:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Thai', sans-serif;
+    text-decoration: none;
+}
+.add_product{
+    width: 15vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_add{
+    width: 10vw;
+    height: 3vw;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 1.5vw;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0071b7;
+    color: #FFF;
+}
+.add_product_store,
+.add_product-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add_product_page{
+    z-index: 99;
+    width: 55vw;
+    height: 40vw;
+    border-radius: 10px;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #70BEEE;
+}
+.name-detail{
+    /* background: red; */
+    height: 80%;
+    width: 40%;
+    margin-right: 5vw;
+    border-radius: 10px;
+}
+.price-img{
+    /* background: yellow; */
+    height: 80%;
+    width: 40%;
+    border-radius: 10px;
+}
+.main{
+    background: #FFF;
+    width: 100%;
+    min-height: 4vw;
+    max-height: 15vw;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    display: block;
+    display: flex;
+    border: none;
+    color: #d2d2d2;
+}
+.detail-product{
+    background: #FFF;
+    width: 100%;
+    min-height: 20vw;
+    max-height: 25vw;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    border: none;
+    color: #d2d2d2;
+}
+.button-add{
+    display: flex;
+}
+.btn {
+    width: 10vw;
+    height: 3vw;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.5vw;
+    transition: 0.3s;
+}
+.btn-add {
+    background: #0071b7;
+    color: #FFF;
+    width: 15vw;
+    margin-left: 10px;
+}

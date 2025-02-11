@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mega Market</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+    <script src="js/Main_Store.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="assets/css/MainMenu.css" />
+    <link rel="stylesheet" href="assets/css/Main_Store.css">
+    <link rel="stylesheet" href="assets/css/Store_profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <!-- เริ่มต้น แทบด้านบน -->
+        <div class="nav-container">
+            <!-- เริ่มต้น โลโก้ -->้
+            <div class="nav-logo">
+                <p class="logo">Mega Market</p>
+            </div>
+            <!-- สิ้นสุด โลโก้ -->
+
+            <!-- เริ่มต้น แทบค้นหา -->
+            <div class="nav-search">
+                <div class="icon">
+                    <i class="fa fas fa-magnifying-glass"></i>
+                </div>
+                <div class="nav-input">
+                    <input onkeyup="searchsomthing(this)" id="txt_search" class="input-search" type="search"
+                        name="search" placeholder="Search..." />
+                </div>
+            </div>
+            <!-- สิ้นสุด แทบค้นหา -->
+
+            <!-- เริ่มต้น ทำเมนูและโปรไฟล์ -->
+            <div class="menu-profile">
+                <div onclick="opencart()" class="cart">
+                    <i class="fa fas fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                    <p class="name-cart" style="margin-left: 2px;">ตะกร้า</p>
+                </div>
+
+                <div onclick="openrecord()" class="record_profile">
+                    <i class="fa fas fa-repeat"></i>
+                    <p class="name-record" style="margin-left: 3px;">ประวัติการสั่งซื้อ</p>
+                </div>
+
+                <div class="login" style="margin: auto;">
+                    <a href="pages/login.html" class="login_login" style="color: #fff; text-decoration: none;">
+                        <i class="fa fas fa-right-to-bracket"></i>
+                        <p style="margin-left: 3px; display: inline;">เข้าสู่ระบบ</p>
+                    </a>
+                </div>
+
+
+                <div class="interested" style="margin: auto;">
+                    <a href="pages/seller.html" class="interested_interested">
+                        <i class="fa fa-store" style="color: #fff;"></i>
+                        <p style="margin-left: 3px; color: #fff;">สนใจใช้งาน</p>
+                    </a>
+                </div>
+
+                <div class="profile" style="margin: auto;">
+                    <a href="pages/profile_store.html" class="profile_profile">
+                        <i style="color: #fff;" class="fa fas fa-user"></i>
+                        <p style="color: #fff; margin-left: 3px; ">โปรไฟล์</p>
+                    </a>
+
+                </div>
+            </div>
+            <!-- เริ่มต้น ทำเมนูและโปรไฟล์ -->
+        </div>
+        <!-- สิ้นสุด แทบด้านบน -->
+        <div class="profile_contains">
+            <div class="button_back">
+                <a href="http://127.0.0.1:5500/MainMenu.html" style="color: #fff;">
+                    <p class="">กลับไปหน้าหลัก</p>
+                </a>
+            </div>
+            <div class="profile_box">
+                <img class="profile_img" src="https://www.designbyilogo.com/wp-content/uploads/2021/01/pv.png" alt="">
+            </div>
+            <div class="detail_profile">
+                <div class="detail_name">
+                    <p>ชื่อร้าน</p>
+                    <div class="detail_name_detail">
+                        <p style="margin-left: 1vw;">DEECPER</p>
+                    </div>
+                </div>
+                <div class="detail_title">
+                    <p>รายละเอียด</p>
+                    <div class="detail_title_detail">
+                        <P style="margin-left: 1vw;">ร้านขายอุปกรณ์อิเล็กทรอนิกส์</P>
+                    </div>
+                </div>
+                <p></p>
+            </div>
+        </div>
+        <div class="add_product">
+            <button class="btn_add" onclick="open_add_product()">
+                <i style="margin-right: 0.5vw;" class="fa fas fa-plus"></i>
+                <p>เพิ่มสินค้า</p>
+            </button>
+        </div>
+        
+        <!-- เริ่มต้น แถบสินค้าและค้นหา -->
+        <div style="background: #70BEEE; border-radius: 5px;" class="container">
+            <!-- เริ่มต้น แถบสินค้า -->
+            <div id="productlist" class="product"></div>
+        </div>
+    </nav>
+    <!-- เริ่ม แถบโปรไฟล์ -->
+
+    <!-- เริ่มต้น รายละเอียดสินค้า -->
+    <div id="modal_desc" class="modal" style="display: none;" >
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+          <h5 style="font-size: 2vw;">รายละเอียดสินค้า</h5>
+          <br>
+          <div class="modaldesc-content">
+            <img id="mdd-img" class="modaldesc-img" src="img/moon.jpg" alt="">
+            <div class="modaldesc-detail">
+              <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
+              <p id="mdd-price" style="font-size: 1.2vw;">$ 500</p>
+              <br>
+              <p id="mdd-desc" class="modaldesc-title"> nulla esse, sequi earum doloribus perferendis mollitia. Quo autem
+                nam blanditiis unde est inventore velit porro, enim sed molestias, ut ab eum eos et libero, perspiciatis
+                molestiae sint aperiam.</p>
+              <br>
+              <div class="btn-cintrol">
+                <button onclick="closeModal()" class="btn">
+                  <p>ปิด</p>
+                </button>
+                <button onclick="addtocart()" class="btn btn-buy">
+                  <p>เพิ่มในตะกร้า</p>
+                </button>
+                <button class="btn_store"><a href="/Store_profile.html" >
+                  <p style="color: #fff;">
+                    ไปที่หน้าร้านค้า
+                  </p>
+                </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- สิ้นสุด รายละเอียดสินค้า -->
+
+    <!-- เริ่มต้น ตะกร้าสินค้า -->
+    <div id="modalcart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h5 style="font-size: 2vw;">ตะกร้า</h5>
+            <br>
+            <div id="mycart" class="cartlist">
+            </div>
+            <div class="btn-control">
+                <button onclick="closeModal()" class="btn">
+                    ปิด
+                </button>
+                <button onclick="buyProduct()" class="btn btn-buy">
+                    ซื้อ
+                </button>                
+            </div>
+        </div>
+    </div>
+    <!-- สิ้นสุด ตะกร้าสินค้า -->
+
+    <!-- เริ่มต้น ประวัติสินค้า -->
+    <div id="record" class="record" style="display: none;">
+        <div onclick="closereocrd()" class="record-bg"></div>
+        <div class="record-page">
+            <h5 style="font-size: 2vw;">ประวัติการสั่งซื้อ</h5>
+            <br>
+            <div id="myrecord" class="recordlist">
+            </div>
+            <div class="btn-control">
+                <button onclick="closereocrd()" class="btn">
+                    ปิด
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- สิ้นสุด ประวัติสินค้า -->
+
+    <!-- เริ่ม ปุ่มเพิ่มสินค้า -->
+     <div id="add_product_store" class="add_product_store" style="display: none;">
+        <div onclick="closeModal()" class="add_product-bg"></div>
+        <div class="add_product_page">
+            <div class="name-detail ">
+                <div class="add-name ">
+                    <input type="text" placeholder=" ชื่อสินค้า" class="main">
+                </div>
+                <div class="add-detail">
+                    <input type="text" placeholder=" รายละเอียด" class="detail-product">
+                </div>
+            </div>
+            <div class="price-img ">
+                <div class="add-price">
+                    <input type="text" placeholder=" ราคา" class="main">
+                </div>
+                <div class="add-img">
+                    <input type="text" placeholder=" ที่อยู่รูปภาพ" class="main">
+                </div>
+                <div class="button-add">
+                    <button onclick="closeModal()" class="btn">
+                        ยกเลิก
+                    </button>
+                    <button class="btn-add btn">
+                        บันทึก
+                    </button>
+                </div>
+            </div>
+        </div>
+     </div>
+</body>
+
+</html>

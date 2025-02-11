@@ -358,11 +358,11 @@ nav {
     min-width: 30vw;
     max-width: 60vw;
     max-height: 30vw;
-    background: #fff;
     border-radius: 10px;
     padding: 10px;
     overflow: scroll;
     scrollbar-width: none;
+    background: #fff;
 }
 
 .modaldesc-content {

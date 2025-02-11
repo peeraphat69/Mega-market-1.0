@@ -118,7 +118,6 @@ function addtocart() {
     for (let i = 0; i < cart.length; i++) {
         if (productindex == cart[i].index) {
             cart[i].count++;
-            product[productindex].sale = (parseInt(product[productindex].sale) + 1).toString(); // 🔥 เพิ่มจำนวนที่กดซื้อ
             pass = false;
         }
     }
@@ -133,19 +132,44 @@ function addtocart() {
             count: 1
         };
         cart.push(obj);
-        product[productindex].sale = (parseInt(product[productindex].sale) + 1).toString(); // 🔥 เพิ่มจำนวนที่กดซื้อ
     }
 
     Swal.fire({
         icon: 'success',
-        title: 'เพิ่ม ' + product[productindex].name + ' ไปที่ตะกร้าและบันทึกประวัติการสั่งซื้อ!'
+        title: 'เพิ่ม ' + product[productindex].name + ' ไปที่ตะกร้า!'
     });
 
-    updateCartCount();  
-    rendercart();   
-    renderrecord();  
-    updateProductSale();  // 🔥 อัปเดต UI ของสินค้าหลังจากกดซื้อ
+    updateCartCount();
+    rendercart();
 }
+
+// 🔥 แก้ให้เพิ่ม `sale` เฉพาะเมื่อกดปุ่มซื้อ
+function buyProduct() {
+    for (let i = 0; i < cart.length; i++) {
+        let productID = cart[i].id;
+        let productIndex = product.findIndex(p => p.id === productID);
+
+        if (productIndex !== -1) {
+            product[productIndex].sale = (parseInt(product[productIndex].sale) + cart[i].count).toString();
+        }
+
+        record.push({ ...cart[i] });
+    }
+
+    updateProductSale();
+    cart = []; // เคลียร์ตะกร้า
+    updateCartCount();
+    rendercart();
+    renderrecord();
+
+    Swal.fire({
+        icon: 'success',
+        title: 'ทำการซื้อสินค้าเรียบร้อยแล้ว!'
+    });
+
+    closeModal();
+}
+
 
 
 // จบ เพิ่มของในตะกร้า
