@@ -79,7 +79,7 @@ function searchsomthing(elem){
 }
 // สิ้นสุด ค้นหาสินค้า
 
-// เริ่มต้น ประเภทสินค้า
+// // เริ่มต้น ประเภทสินค้า
 function searchproduct(param){
     console.log(param);
     $(".product-items").css('display', 'none');
@@ -90,7 +90,7 @@ function searchproduct(param){
         $("."+param).css('display', 'block')
     }
 }
-// สิ้นสุด ประเภทสินค้า
+// // สิ้นสุด ประเภทสินค้า
 
 // เริ่ม แสดงตระกร้าเมื่อกด
 var productindex = 0;
@@ -103,7 +103,7 @@ function open_detail(index){
     $("#mdd-price").text(numberWithCommas(product[index].price +' บาท '))
     $("#mdd-desc").text(product[index].description);
 }
-function closeModal(){
+function closeModal1(){
     $(".modal").css('display', 'none')
 }
 // จบ แสดงตระกร้าเมื่อกด

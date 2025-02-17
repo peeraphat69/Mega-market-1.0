@@ -122,8 +122,8 @@
     <!-- เริ่ม แถบโปรไฟล์ -->
 
     <!-- เริ่มต้น รายละเอียดสินค้า -->
-    <div id="modal_desc" class="modal" style="display: none;" >
-        <div onclick="closeModal()" class="modal-bg"></div>
+    <div id="modal_desc" class="modal" style="display: none;">
+        <div onclick="closeModal2()" class="modal-bg"></div>
         <div class="modal-page">
           <h5 style="font-size: 2vw;">รายละเอียดสินค้า</h5>
           <br>
@@ -138,17 +138,17 @@
                 molestiae sint aperiam.</p>
               <br>
               <div class="btn-cintrol">
-                <button onclick="closeModal()" class="btn">
+                <button onclick="closeModal2()" class="btn">
                   <p>ปิด</p>
                 </button>
                 <button onclick="addtocart()" class="btn btn-buy">
                   <p>เพิ่มในตะกร้า</p>
                 </button>
-                <button class="btn_store"><a href="/Store_profile.html" >
-                  <p style="color: #fff;">
-                    ไปที่หน้าร้านค้า
-                  </p>
-                </a>
+                <button class="btn_store"><a href="/Store_profile.html">
+                    <p style="color: #fff;">
+                      ไปที่หน้าร้านค้า
+                    </p>
+                  </a>
                 </button>
               </div>
             </div>
@@ -194,36 +194,29 @@
     </div>
     <!-- สิ้นสุด ประวัติสินค้า -->
 
-    <!-- เริ่ม ปุ่มเพิ่มสินค้า -->
-     <div id="add_product_store" class="add_product_store" style="display: none;">
-        <div onclick="closeModal()" class="add_product-bg"></div>
-        <div class="add_product_page">
-            <div class="name-detail ">
-                <div class="add-name ">
-                    <input type="text" placeholder=" ชื่อสินค้า" class="main">
-                </div>
-                <div class="add-detail">
-                    <input type="text" placeholder=" รายละเอียด" class="detail-product">
-                </div>
-            </div>
-            <div class="price-img ">
-                <div class="add-price">
-                    <input type="text" placeholder=" ราคา" class="main">
-                </div>
-                <div class="add-img">
-                    <input type="text" placeholder=" ที่อยู่รูปภาพ" class="main">
-                </div>
-                <div class="button-add">
-                    <button onclick="closeModal()" class="btn">
-                        ยกเลิก
-                    </button>
-                    <button class="btn-add btn">
-                        บันทึก
-                    </button>
-                </div>
+    <!-- ปุ่มเพิ่มสินค้า -->
+<div id="add_product_store" class="add_product_store" style="display: none;">
+    <div onclick="closeModal()" class="add_product-bg"></div>
+    <div class="add_product_page">
+        <div class="form-group1">
+            <input type="text" id="productName" placeholder="ชื่อสินค้า">
+            <textarea id="productDetail" placeholder="รายละเอียด"></textarea>
+        </div>
+    
+        <div class="form-group2">
+            <input type="text" id="productPrice" placeholder="ราคา">
+            <input type="text" id="productImage" placeholder="URL รูปภาพ">
+            <div class="button-add">
+                <button onclick="closeModal()" class="btn">ยกเลิก</button>
+                <button onclick="addProduct()" class="btn-add btn">บันทึก</button>
             </div>
         </div>
-     </div>
+    </div>
+</div>
+
+<!-- ส่วนแสดงรายการสินค้า -->
+<div id="productlist" class="product-list"></div>
+
 </body>
 
 </html>

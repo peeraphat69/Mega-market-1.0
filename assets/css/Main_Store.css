@@ -7,6 +7,10 @@
     font-family: 'Noto Sans Thai', sans-serif;
     text-decoration: none;
 }
+.button-add{
+    margin-top: 7vw;
+
+}
 .add_product{
     width: 15vw;
     margin: auto;
@@ -40,6 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
 }
 .add_product_page{
     z-index: 99;
@@ -49,48 +54,56 @@
     scrollbar-width: none;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;   
     background: #70BEEE;
 }
-.name-detail{
-    /* background: red; */
-    height: 80%;
-    width: 40%;
-    margin-right: 5vw;
+.add_product_page {
+    background-color: #86C5F8;
+    padding: 20px;
     border-radius: 10px;
-}
-.price-img{
-    /* background: yellow; */
-    height: 80%;
-    width: 40%;
-    border-radius: 10px;
-}
-.main{
-    background: #FFF;
-    width: 100%;
-    min-height: 4vw;
-    max-height: 15vw;
-    margin-top: 1vw;
-    margin-bottom: 2vw;
-    border-radius: 5px;
-    font-size: 1.5vw;
-    display: block;
+    width: 55vw;
+    height: 30vw;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
     display: flex;
-    border: none;
-    color: #d2d2d2;
 }
-.detail-product{
-    background: #FFF;
-    width: 100%;
-    min-height: 20vw;
-    max-height: 25vw;
-    margin-top: 1vw;
-    margin-bottom: 2vw;
+.form-group1{
+    /* background: red; */
+    width: 100%;        /* กำหนดความกว้าง */
+    height: 100px;      /* ความสูงเริ่มต้น */
+    min-height:20vw;   /* ความสูงต่ำสุด */
+    max-height: 25vw;  /* ความสูงสูงสุด */
+    resize: vertical;   /* อนุญาตให้ขยายเฉพาะแนวตั้ง */
+
+}
+.form-group2{
+    /* background: blue; */
+    min-width: 50%;
+    max-width: 50%;
+}
+.form-group1 input, .form-group1 textarea {
+    flex: 1;
+    padding: 10px;
     border-radius: 5px;
-    font-size: 1.5vw;
-    border: none;
-    color: #d2d2d2;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 2vw;
+    width: 25vw;        
+    min-height: 5px;   /* ความสูงต่ำสุด */
+    max-height: 20vw;  /* ความสูงสูงสุด */
+    resize: vertical;   /* อนุญาตให้ขยายเฉพาะแนวตั้ง */
 }
+.form-group2 input, .form-group2 textarea {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 2vw;
+    min-width: 20vw;
+    max-width: 100%;
+}
+
 .button-add{
     display: flex;
 }
@@ -110,3 +123,5 @@
     width: 15vw;
     margin-left: 10px;
 }
+
+
